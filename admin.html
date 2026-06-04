@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard – Valley2Sky Paragliding</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ======== Navigation Bar ======== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <span class="brand-icon">🪂</span>
+        Valley2Sky
+      </a>
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+      <div class="navbar-links">
+        <a href="index.html">Home</a>
+        <a href="booking.html">Book Flight</a>
+        <a href="admin.html" class="active">Admin Dashboard</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======== Notification Container ======== -->
+  <div id="notificationContainer" class="notification-container" aria-live="polite"></div>
+
+  <main>
+    <div class="container">
+      <div class="dashboard-header">
+        <h1 class="section-title" style="margin-bottom:0;">Admin Dashboard</h1>
+        <span style="color:var(--gray-500); font-size:0.9rem;">Manage all bookings</span>
+      </div>
+
+      <!-- ======== Dashboard Statistics ======== -->
+      <section class="stats-grid" aria-label="Booking statistics">
+        <div class="stat-card total">
+          <div class="stat-value" id="statTotal">0</div>
+          <div class="stat-label">Total Bookings</div>
+        </div>
+        <div class="stat-card pending">
+          <div class="stat-value" id="statPending">0</div>
+          <div class="stat-label">Pending</div>
+        </div>
+        <div class="stat-card completed">
+          <div class="stat-value" id="statCompleted">0</div>
+          <div class="stat-label">Completed</div>
+        </div>
+      </section>
+
+      <!-- ======== Search & Filter Controls ======== -->
+      <section class="admin-controls">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" class="form-control" placeholder="Search by customer name…" aria-label="Search bookings by customer name">
+        </div>
+        <select id="filterStatus" class="filter-select" aria-label="Filter by booking status">
+          <option value="">All Statuses</option>
+          <option value="Pending">Pending</option>
+          <option value="Completed">Completed</option>
+        </select>
+      </section>
+
+      <!-- ======== Bookings Table ======== -->
+      <section class="table-wrapper" aria-label="Bookings list">
+        <table id="bookingsTable">
+          <thead>
+            <tr>
+              <th>Booking ID</th>
+              <th>Customer Name</th>
+              <th>Phone</th>
+              <th>Package</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Rows rendered dynamically by admin.js -->
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <!-- ======== Footer ======== -->
+  <footer class="footer">
+    <p>&copy; 2026 Valley2Sky Paragliding. All rights reserved. | University Project Prototype</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
